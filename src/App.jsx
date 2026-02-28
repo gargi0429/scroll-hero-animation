@@ -66,62 +66,67 @@ function App() {
   const headline = "WELCOME ITZFIZZ".split("");
 
   return (
-    <>
-      <section
-        ref={heroRef}
-        className="h-screen flex flex-col justify-center items-center relative overflow-hidden bg-black text-white"
-      >
- 
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-60 z-0"></div>
+  <>
+  <section
+    ref={heroRef}
+    className="h-screen flex flex-col justify-center items-center relative overflow-hidden bg-black text-white"
+  >
+    {/* Background Glow */}
+    <div className="absolute w-[800px] h-[800px] bg-blue-500/20 blur-[150px] rounded-full top-[-200px] z-0"></div>
 
-     
-        <h1 className="text-4xl md:text-7xl tracking-[0.5em] font-bold flex relative z-10">
-          {headline.map((letter, i) => (
-            <span
-              key={i}
-              ref={(el) => (lettersRef.current[i] = el)}
-            >
-              {letter}
-            </span>
-          ))}
-        </h1>
+    {/* Headline */}
+    <h1 className="text-5xl md:text-8xl font-extrabold tracking-[0.35em] flex relative z-10 text-white/90">
+      {headline.map((letter, i) => (
+        <span
+          key={i}
+          ref={(el) => (lettersRef.current[i] = el)}
+          className="inline-block"
+        >
+          {letter}
+        </span>
+      ))}
+    </h1>
 
+    {/* Subheading */}
+    <p className="mt-6 text-gray-400 text-lg tracking-wide relative z-10">
+      Premium Scroll Experience Built With GSAP
+    </p>
 
-        <div className="flex gap-12 mt-12 text-center relative z-10">
-          <div className="stat">
-            <h2 className="text-3xl font-bold">98%</h2>
-            <p className="text-sm text-gray-400">
-              Customer Satisfaction
-            </p>
-          </div>
+    {/* Stats */}
+    <div className="flex gap-16 mt-16 text-center relative z-10">
+      <div className="stat backdrop-blur-md bg-white/5 px-6 py-4 rounded-xl border border-white/10">
+        <h2 className="text-4xl font-bold text-white">98%</h2>
+        <p className="text-sm text-gray-400 mt-1">
+          Customer Satisfaction
+        </p>
+      </div>
 
-          <div className="stat">
-            <h2 className="text-3xl font-bold">120K+</h2>
-            <p className="text-sm text-gray-400">
-              Active Users
-            </p>
-          </div>
+      <div className="stat backdrop-blur-md bg-white/5 px-6 py-4 rounded-xl border border-white/10">
+        <h2 className="text-4xl font-bold text-white">120K+</h2>
+        <p className="text-sm text-gray-400 mt-1">
+          Active Users
+        </p>
+      </div>
 
-          <div className="stat">
-            <h2 className="text-3xl font-bold">4.9★</h2>
-            <p className="text-sm text-gray-400">
-              App Rating
-            </p>
-          </div>
-        </div>
+      <div className="stat backdrop-blur-md bg-white/5 px-6 py-4 rounded-xl border border-white/10">
+        <h2 className="text-4xl font-bold text-white">4.9★</h2>
+        <p className="text-sm text-gray-400 mt-1">
+          App Rating
+        </p>
+      </div>
+    </div>
 
-    
-        <img
-          ref={imageRef}
-          src="https://images.unsplash.com/photo-1502877338535-766e1452684a"
-          alt="Car"
-          className="absolute bottom-0 w-[600px] opacity-80 object-contain z-0"
-        />
-      </section>
+    {/* Image */}
+    <img
+      ref={imageRef}
+      src="https://images.unsplash.com/photo-1502877338535-766e1452684a"
+      alt="Car"
+      className="absolute bottom-[-40px] w-[650px] opacity-90 object-contain z-0"
+    />
+  </section>
 
-    
-      <section className="h-[150vh] bg-black"></section>
-    </>
+  <section className="h-[150vh] bg-gradient-to-b from-black to-gray-900"></section>
+</>
   );
 }
 
